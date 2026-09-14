@@ -100,7 +100,7 @@
 
   <main>
     <div class="card">
-      <p class="updated">Last updated: August 30, 2026</p>
+      <p class="updated">Last updated: September 14, 2026</p>
 
       <h2>Who runs ShopBook</h2>
       <p>
@@ -112,7 +112,11 @@
       <h2>Information we collect</h2>
       <ul>
         <li>Google account info (name, email) when you sign in.</li>
-        <li>Shop data you enter: products, stock, bills, customer names/phone numbers, ledger entries, and shop profile details (name, address, phone, UPI ID, GST number).</li>
+        <li>Shop data you enter: products, stock, bills, customer names/phone numbers, ledger entries, and shop profile details (name, address, phone, UPI ID, GST number, business type/industry).</li>
+        <li>Staff profile details — if you're an employee, the name, age, blood group, mobile/alternate mobile number, and current/permanent address you choose to enter about yourself. This is optional, visible only to you and your shop's owner, and only you can edit or delete it.</li>
+        <li>Who created each bill — when a bill is saved, the app records which signed-in account (owner or staff) created it, so the shop owner can see what each employee has sold.</li>
+        <li>Barcodes you scan — read via your camera to look up or search products; we don't store photos or video, only the decoded barcode number.</li>
+        <li>Nearby Bluetooth devices — only if you connect a POS receipt printer; we use this solely to find and print to that printer, never for location tracking.</li>
         <li>Contacts — only if you choose to pick a customer from your phone's contacts. We only read the one contact you select (name and phone number) to fill in the customer form; we never read your contacts in bulk or send them anywhere beyond your own shop's customer record.</li>
         <li>Basic device/usage data collected automatically by Firebase and the ad network described below.</li>
       </ul>
@@ -121,13 +125,30 @@
       <p>
         Your shop data is used solely to provide the app's features — inventory, billing, ledger,
         staff access, and dashboard reports — for your shop. It is stored in Google Firebase (Firestore)
-        and is only accessible to your shop's owner and the employees you explicitly invite.
+        and is only accessible to your shop's owner and the employees you explicitly invite. An owner
+        can also grant or restrict what each employee can access (billing, inventory, cost/profit
+        figures) and see the bills that employee has created.
       </p>
+      <p>
+        If your shop shares its phone number with another ShopBook shop to link a shared ledger, only
+        your shop name and phone number are made discoverable for that purpose — never your full shop
+        data.
+      </p>
+
+      <h2>Permissions this app requests</h2>
+      <ul>
+        <li><strong>Camera</strong> — to scan product/item barcodes.</li>
+        <li><strong>Bluetooth</strong> — to find and print receipts on a paired POS thermal printer.</li>
+        <li><strong>Contacts</strong> — only when you tap "Pick from Contacts" while adding a customer.</li>
+        <li><strong>Notifications</strong> — to show on-device reminders for upcoming/overdue ledger payments.</li>
+      </ul>
+      <p>Each of these is used only for the specific feature above, never in the background without your action.</p>
 
       <h2>Third-party services</h2>
       <ul>
         <li><strong>Google Firebase</strong> — authentication, database, and app security (App Check).</li>
         <li><strong>Google AdMob</strong> — shows ads in the app; may collect advertising identifiers per Google's own privacy policy.</li>
+        <li><strong>Open Food Facts</strong> — when you scan a barcode, we send only that barcode number to this public product database to try to auto-fill the item's name/category. No personal or shop data is sent.</li>
       </ul>
       <p>We do not sell your data to third parties.</p>
 
@@ -147,7 +168,7 @@
       <h2>Data retention &amp; deletion</h2>
       <p>
         Your data is retained as long as your account/shop exists. To request deletion of your shop's
-        data, contact us at
+        data — including any staff profile you've filled in — contact us at
         <a href="mailto:contact.trustedgesolution@gmail.com">contact.trustedgesolution@gmail.com</a>.
       </p>
 
