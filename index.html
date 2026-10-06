@@ -6,12 +6,13 @@
 <title>ShopBook Privacy Policy</title>
 <style>
   :root {
-    --green: #2E7D32;
-    --text: #1b1b1b;
+    --brand: #4F46E5;
+    --brand-dark: #3730A3;
+    --text: #1b1b1f;
     --muted: #5f6368;
-    --bg: #f7faf7;
+    --bg: #f5f5fb;
     --card: #ffffff;
-    --border: #e0e6e0;
+    --border: #e3e3ef;
   }
   * { box-sizing: border-box; }
   body {
@@ -22,7 +23,7 @@
     line-height: 1.6;
   }
   header {
-    background: var(--green);
+    background: linear-gradient(135deg, var(--brand), var(--brand-dark));
     color: #fff;
     padding: 32px 20px;
   }
@@ -36,8 +37,8 @@
   header .logo {
     width: 48px;
     height: 48px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.15);
+    border-radius: 12px;
+    background: rgba(255,255,255,0.18);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -72,13 +73,20 @@
   }
   h2 {
     font-size: 1.05rem;
-    color: var(--green);
+    color: var(--brand);
     margin: 28px 0 8px;
   }
   h2:first-of-type { margin-top: 0; }
   ul { margin: 6px 0; padding-left: 20px; }
   li { margin-bottom: 4px; }
-  a { color: var(--green); }
+  a { color: var(--brand); overflow-wrap: break-word; }
+  @media (max-width: 380px) {
+    header h1 { font-size: 1.2rem; }
+    .card { padding: 20px 18px; }
+  }
+  @media (min-width: 900px) {
+    header .inner, main { max-width: 800px; }
+  }
   footer {
     text-align: center;
     color: var(--muted);
@@ -100,7 +108,7 @@
 
   <main>
     <div class="card">
-      <p class="updated">Last updated: September 14, 2026</p>
+      <p class="updated">Last updated: October 6, 2026</p>
 
       <h2>Who runs ShopBook</h2>
       <p>
@@ -112,63 +120,67 @@
       <h2>Information we collect</h2>
       <ul>
         <li>Google account info (name, email) when you sign in.</li>
-        <li>Shop data you enter: products, stock, bills, customer names/phone numbers, ledger entries, and shop profile details (name, address, phone, UPI ID, GST number, business type/industry).</li>
-        <li>Staff profile details — if you're an employee, the name, age, blood group, mobile/alternate mobile number, and current/permanent address you choose to enter about yourself. This is optional, visible only to you and your shop's owner, and only you can edit or delete it.</li>
-        <li>Who created each bill — when a bill is saved, the app records which signed-in account (owner or staff) created it, so the shop owner can see what each employee has sold.</li>
-        <li>Barcodes you scan — read via your camera to look up or search products; we don't store photos or video, only the decoded barcode number.</li>
-        <li>Nearby Bluetooth devices — only if you connect a POS receipt printer; we use this solely to find and print to that printer, never for location tracking.</li>
-        <li>Contacts — only if you choose to pick a customer from your phone's contacts. We only read the one contact you select (name and phone number) to fill in the customer form; we never read your contacts in bulk or send them anywhere beyond your own shop's customer record.</li>
-        <li>Basic device/usage data collected automatically by Firebase and the ad network described below.</li>
+        <li>Shop data you enter: items and stock, bills (with the customer's name, and the vehicle number for garages), customer names and phone numbers, ledger entries and their due dates, and shop details (name, country, currency, address, phone, UPI ID, tax number, business type and industry).</li>
+        <li>Job cards and repairs, if your shop uses them: customer name and phone, vehicle number, make, model and odometer, or device model and IMEI, the complaint or problem, parts and labour, and who the job is assigned to.</li>
+        <li>Serial numbers and IMEIs of units you stock and sell, with the bill they were sold on and their warranty end date.</li>
+        <li>Staff profile details — if you're a staff member, the name, age, blood group, phone numbers and addresses you choose to enter about yourself. This is optional, visible only to you and your shop's owner, and only you can edit or delete it.</li>
+        <li>Who created each bill and job — the app records which signed-in account made it, so the owner can see what each staff member did.</li>
+        <li>Barcodes you scan — read through your camera to find or add items. We don't store photos or video, only the decoded number.</li>
+        <li>Nearby Bluetooth devices — only if you connect a receipt printer, and only to find and print to it.</li>
+        <li>Contacts — only when you pick a customer from your phone's contacts. We read only the contact you choose (name and phone).</li>
+        <li>Basic device and usage data collected automatically by Firebase and the ad network described below.</li>
       </ul>
 
       <h2>How we use it</h2>
       <p>
-        Your shop data is used solely to provide the app's features — inventory, billing, ledger,
-        staff access, and dashboard reports — for your shop. It is stored in Google Firebase (Firestore)
-        and is only accessible to your shop's owner and the employees you explicitly invite. An owner
-        can also grant or restrict what each employee can access (billing, inventory, cost/profit
-        figures) and see the bills that employee has created.
+        Your shop data is used only to provide the app's features — billing, stock, ledger, job cards
+        and repairs, staff access and reports — for your shop. It is stored in Google Firebase
+        (Firestore) and is only accessible to your shop's owner and the staff they invite. The owner
+        decides what each staff member can see and do.
       </p>
       <p>
-        If your shop shares its phone number with another ShopBook shop to link a shared ledger, only
-        your shop name and phone number are made discoverable for that purpose — never your full shop
-        data.
+        If your shop links a shared ledger with another ShopBook shop, only your shop name and phone
+        number are made discoverable for that purpose — never your other shop data.
       </p>
 
       <h2>Permissions this app requests</h2>
       <ul>
-        <li><strong>Camera</strong> — to scan product/item barcodes.</li>
-        <li><strong>Bluetooth</strong> — to find and print receipts on a paired POS thermal printer.</li>
-        <li><strong>Contacts</strong> — only when you tap "Pick from Contacts" while adding a customer.</li>
-        <li><strong>Notifications</strong> — to show on-device reminders for upcoming/overdue ledger payments.</li>
+        <li><strong>Camera</strong> — to scan barcodes and IMEIs.</li>
+        <li><strong>Bluetooth</strong> — to find and print on a paired receipt printer.</li>
+        <li><strong>Contacts</strong> — only when you choose to pick a customer from your contacts.</li>
+        <li><strong>Notifications</strong> — for on-device reminders about upcoming or overdue payments.</li>
       </ul>
-      <p>Each of these is used only for the specific feature above, never in the background without your action.</p>
+      <p>Each is used only for the feature above, never in the background without your action.</p>
 
       <h2>Third-party services</h2>
       <ul>
-        <li><strong>Google Firebase</strong> — authentication, database, and app security (App Check).</li>
-        <li><strong>Google AdMob</strong> — shows ads in the app; may collect advertising identifiers per Google's own privacy policy.</li>
-        <li><strong>Open Food Facts</strong> — when you scan a barcode, we send only that barcode number to this public product database to try to auto-fill the item's name/category. No personal or shop data is sent.</li>
+        <li><strong>Google Firebase</strong> — sign-in, database and app security (App Check).</li>
+        <li><strong>Google AdMob</strong> — shows ads in the app and may collect advertising identifiers under Google's own privacy policy.</li>
+        <li><strong>Open Food Facts</strong> — when you scan a barcode, only that number is sent to this public product database to try to fill in the item's name. No personal or shop data is sent.</li>
       </ul>
-      <p>We do not sell your data to third parties.</p>
+      <p>We do not sell your data.</p>
 
       <h2>Notifications</h2>
       <p>
-        ShopBook schedules local reminder notifications on your device for upcoming/overdue ledger
-        payments. These are generated and shown entirely on-device.
+        ShopBook schedules payment reminders on your device. They are created and shown entirely on
+        the device.
       </p>
 
       <h2>SMS</h2>
       <p>
-        When you add a ledger (credit/debit) entry, ShopBook can open your phone's own SMS app with a
-        message pre-filled for that customer. ShopBook never sends SMS on its own — you always choose
-        whether to tap Send in your own messaging app.
+        ShopBook can open your phone's own SMS app with a message filled in for a customer. It never
+        sends SMS by itself — you always choose whether to send.
       </p>
 
       <h2>Data retention &amp; deletion</h2>
+      <p>Your data is kept as long as your account and shop exist.</p>
       <p>
-        Your data is retained as long as your account/shop exists. To request deletion of your shop's
-        data — including any staff profile you've filled in — contact us at
+        Bills are never deleted, only marked cancelled, so your accounts stay complete. Each bill keeps
+        the name of the customer it was made for, and their ledger entries stay in your records, even if
+        you later remove that customer from your list.
+      </p>
+      <p>
+        To ask for your shop's data to be deleted — including any staff profile — contact us at
         <a href="mailto:contact.trustedgesolution@gmail.com">contact.trustedgesolution@gmail.com</a>.
       </p>
 
